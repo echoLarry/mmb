@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title>优惠券--不要买手机版</title>
+		<!--<link rel="shortcut icon" href="" />-->
+		<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css" />
+
+		<!--[if lt IE 9]>
+        	
+        <script src="lib/html5shiv/html5shiv.min.js"></script>
+        <script src="lib/respond/respond.js"></script>
+        	
+        <![endif]-->
+		<link rel="stylesheet/less" href="css/base.less" />
+		<link rel="stylesheet/less" href="css/couponproduct.less" />
+		<script src="./lib/less/less.min.js"></script>
+	</head>
+
+	<body>
+
+		<!--头部区域-->
+		<div class="head">
+			<div class="back">
+				<a href="javascript:;" class="glyphicon glyphicon-menu-left"></a>
+			</div>
+			<h1>肯德基优惠券</h1>
+
+			<div class="home">
+				<a href="#" class="icon-app"></a>
+			</div>
+		</div>
+
+		<section id="banner">
+
+			<!-- 商品列表-->
+			<div>
+				<div style="font-size:12px; text-align:center; color:#999; margin:8px 0;">
+					--点餐前出示手机中的优惠券，即可享受优惠--
+				</div>
+				<div class="containe">
+					<div class="sp">
+						<ul>
+
+						</ul>
+					</div>
+					<div class="page">
+						<table width="100%">
+							<tbody>
+								<tr>
+									<td>
+										<a href="#">上一页</a>
+									</td>
+									<td>
+										<select class="xx">
+											<option selected="selected" value="1">1/12</option>
+											<option value="2">2/12</option>
+											<option value="3">3/12</option>
+											<option value="4">4/12</option>
+											<option value="5">5/12</option>
+											<option value="6">6/12</option>
+										</select>
+									</td>
+									<td>
+										<a href="#">下一页</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--标题栏-->
+			<div class="nav">
+				<a href="index.html">
+					首页
+				</a>
+				>
+				<a href="#">
+					优惠券
+				</a>
+			</div>
+
+		</section>
+		<!--图片详情区域-->
+		<div id="mask">
+			<div>
+
+			</div>
+			<a href="javascript:;" class="next"></a>
+			<a href="javascript:;" class="prev"></a>
+		</div>
+
+		<!--底部区域-->
+
+		<footer id="footer" class="container-fluid">
+			<div class="row text-center">
+				<a href="#" class="col-xs-4 login">登录</a>
+				<a href="#" class="col-xs-4 enroll">注册</a>
+				<a href="#" class="col-xs-4 " id="to_top">返回顶部</a>
+			</div>
+			<div class="row">
+				<p class="text-center">
+					<a href="#">手机app下载</a>
+					<a href="#">不要买手机版</a>
+					--掌上平台
+				</p>
+			</div>
+		</footer>
+	</body>
+	<!--商品列表-->
+	<script type="text/template" id="bannerTpl">
+		{{each result as value i}}
+		<li>
+			<a href="{{getSrc(value.couponProductImg)}}" date-couponProductId="{{value.couponProductId}}">
+				<div class="pic">
+					{{#value.couponProductImg}}
+				</div>
+				<div class="info">
+					<div class="title">{{value.couponProductName}}
+						<h2>{{value.couponProductPrice}}</h2></div>
+
+					<div class="other">{{value.couponProductTime}}</div>
+				</div>
+			</a>
+		</li>
+
+		{{/each}}
+	</script>
+	<!--商品详情-->
+	<script type="text/template" id="maskTpl">
+		{{each result as value i}}
+		<div class="text-center">
+
+		</div>
+		{{/each}}
+	</script>
+
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<!--引用template.js-->
+	<script src="./lib/template/template.js"></script>
+	<script src="./js/base.js"></script>
+	<script src="js/couponproduct.js"></script>
+
+</html>

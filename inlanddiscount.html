@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+
+	<title>国内折扣</title>
+	<!-- 引用第三方样式-->
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+	<!-- 引用样式重置文件-->
+	<link rel="stylesheet/less" href="css/base.less"/>
+	<!-- 引用自己的样式文件-->
+	<link rel="stylesheet/less" href="css/inlanddiscount.less"/>
+	<!-- 引用less.js-->
+	<script src="lib/less/less.min.js"></script>
+</head>
+
+<body>
+<!-- 头部区域-->
+<div class="head">
+	<div class="back">
+		<a href="#" class="glyphicon glyphicon-menu-left"></a>
+	</div>
+	<h1>国内折扣</h1>
+
+	<div class="home">
+		<a href="#" class="icon-app"></a>
+	</div>
+</div>
+<!-- 商品列表-->
+<div id="shopList">
+	<div class="fll-friend">
+		<ul>
+
+		</ul>
+	</div>
+</div>
+<!--标题栏-->
+<section class="nav">
+	<a href="./index.html">
+		首页
+	</a>
+	>
+	<a href="./inlanddiscount.html">
+		省钱快曝
+	</a>
+</section>
+<!--底部区域-->
+<footer id="footer" class="container-fluid">
+	<div class="row text-center">
+		<a href="#" class="col-xs-4 login">登录</a>
+		<a href="#" class="col-xs-4 enroll">注册</a>
+		<a href="#" class="col-xs-4 " id="to_top">返回顶部</a>
+	</div>
+	<div class="row">
+		<p class="text-center">
+			<a href="#">手机app下载</a>
+			<a href="#">不要买手机版</a>
+			--掌上平台
+		</p>
+	</div>
+</footer>
+
+<!--fix-->
+<div class="fix">
+	<a href="javascript:;" id="closFix"></a>
+
+	<div class="icon"></div>
+	<p>慢慢买</p>
+
+	<p>全网比价，查历史价格</p>
+	<a href="#">立即打开</a>
+</div>
+</body>
+<script type="text/template" id="listTpl">
+	{{each result as value i}}
+	<li class="f-border">
+		<a href="#" date-productId="{{value.productId}}">
+			<div class="img">
+				{{#value.productImg}}
+				<div class="title">{{value.productName}}</div>
+			</div>
+			<div class="subtit">{{value.productPrice}}</div>
+			<div class="info">
+				<div class="mall">{{value.productFrom}} | {{value.productTime}}</div>
+			</div>
+		</a>
+	</li>
+	{{/each}}
+</script>
+<!--引用jq-->
+<script src="lib/jquery/jquery.min.js"></script>
+<!--引用bootstrop.js-->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!--引用template.js-->
+<script src="lib/template/template.js"></script>
+<!--引用自己的js-->
+<script>
+	$(function () {
+		getinlanddiscount();
+		goBack();
+		closFix();
+		//=======================
+		function getinlanddiscount() {
+			$.ajax({
+				type: "get",
+				url: "http://139.199.157.195:9090/api/getinlanddiscount",
+				async: true,
+				success: function (result) {
+
+					var html = template("listTpl", result);
+					$("#shopList ul").html(html);
+				}
+			});
+		}
+
+		//============================
+		function goBack() {
+			$(".back").on("click", function () {
+				$(this).children().attr("href", document.referrer);
+			})
+		}
+
+		toTop();
+
+		//返回顶部
+		function toTop() {
+			$("#to_top").on("click", function (e) {
+				e.preventDefault();
+				$('body,html').animate({scrollTop: 0}, 400);
+			})
+		}
+
+		// 关闭fix
+		function closFix() {
+			$('#closFix').on('mousedown', function () {
+				$('.fix').fadeOut('slow');
+				$('#footer').animate({paddingBottom: 0}, 400);
+			})
+		}
+	})
+</script>
+
+</html>

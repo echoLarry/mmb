@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<!-- viewport适口 -->
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	      name="viewport"/>
+	<title>慢慢买-品牌大全-手机版</title>
+	<!-- 引入bootstrap -->
+	<link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<!-- 引入重置less -->
+	<link href="./css/base.less" rel="stylesheet/less" type="text/css"/>
+	<!-- 引入brandTitle.less -->
+	<link href="./css/brandTitle.less" rel="stylesheet/less" type="text/css"/>
+</head>
+<body>
+<section class="box clearfix">
+
+	<!--头部区域-->
+	<header id="header">
+		<div class="logo">
+			<a href="index.html">
+				<img src="./images/header_logo.png" alt=""/>
+			</a>
+		</div>
+		<div class="app">
+			<a href="">
+				<img src="./images/header_app.png" alt=""/>
+			</a>
+		</div>
+	</header>
+	<!--搜索框-->
+	<form action="#" id="search">
+			<div class="row">
+				<div class="col-xs-12">
+					<input type="text" class="form-control col-xs-9" placeholder="请输入你要比价的商品">
+				</div>
+				<div class="text-center">
+					<button type="submit" class="btn">搜索</button>
+				</div>
+			</div>
+	</form>
+	<!-- list -->
+	<form accept-charset="utf-8" action="" id="list" method="get">
+		<!-- nav -->
+		<section class="nav">
+			<a href="index.html">首页</a>
+			>
+			<a href="#">品牌大全</a>
+		</section>
+		<!-- hot -->
+		<section class="hot">
+		</section>
+	</form>
+	<!--底部区域-->
+	<footer id="footer" class="container-fluid">
+		<div class="row text-center">
+			<a href="javascript:;" class="col-xs-4 login">登录</a>
+			<a href="javascript:;" class="col-xs-4 enroll">注册</a>
+			<a href="javascript:;" class="col-xs-4 " id="to_top">返回顶部</a>
+		</div>
+		<div class="row">
+			<p class="text-center">
+				<a href="#">手机app下载</a>
+				<a href="#">不要买手机版</a>
+				--掌上平台
+			</p>
+		</div>
+	</footer>
+	<!-- fixed -->
+	<div class="fix">
+		<a href="javascript:;" id="closFix"></a>
+
+		<div class="icon"></div>
+		<p>慢慢买</p>
+
+		<p>全网比价，查历史价格</p>
+		<a href="#">立即打开</a>
+	</div>
+</section>
+</body>
+<!-- 引入jquery -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<!-- 引入bootstrap.js -->
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 引入less.js -->
+<script src="./lib/less/less.min.js"></script>
+<!-- 引入template.js -->
+<script src="./lib/template/template.js"></script>
+<!-- 引入brandTitle.js -->
+<script src="./js/base.js"></script>
+<script src="./js/brandTitle.js"></script>
+<script type="text/template" id="tpl">
+	<div>
+		热门品牌排行
+	</div>
+	{{each result as value i}}
+	<div>
+		<div>
+			<a href="./brand.html?brandTitleId={{value.brandTitleId}}&brandTitle={{value.brandTitle}}">
+				{{value.brandTitle}}
+			</a>
+		</div>
+	</div>
+	{{/each}}
+</script>
+</html>

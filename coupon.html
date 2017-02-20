@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+
+	<title>优惠券</title>
+	<!-- 引用第三方样式-->
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+	<!-- 引用样式重置文件-->
+	<link rel="stylesheet/less" href="css/base.less"/>
+	<!-- 引用自己的样式文件-->
+	<link rel="stylesheet/less" href="css/coupon.less"/>
+	<!-- 引用less.js-->
+	<script src="lib/less/less.min.js"></script>
+</head>
+
+<body>
+<!--头部区域-->
+<div class="head">
+	<div class="back">
+		<a href="./index.html" class="glyphicon glyphicon-menu-left"></a>
+	</div>
+	<h1>优惠券</h1>
+
+	<div class="home">
+		<a href="#" class="icon-app"></a>
+	</div>
+</div>
+<!-- 商品列表-->
+
+<div id="prd_list">
+	<div class="quan-box">
+		<div class="quan-model">
+			<div class="bd clearfix">
+				<ul>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="nav" style="margin-top: 20px">
+	<a href="./index.html">首页</a>&nbsp;>&nbsp;优惠券
+</div>
+<!--底部区域-->
+
+<footer id="footer" class="container-fluid">
+	<div class="row text-center">
+		<a href="#" class="col-xs-4 login">登录</a>
+		<a href="#" class="col-xs-4 enroll">注册</a>
+		<a href="javascript:;" class="col-xs-4 " id="to_top">返回顶部</a>
+	</div>
+	<div class="row">
+		<p class="text-center">
+			<a href="#">手机app下载</a>
+			<a href="#">不要买手机版</a>
+			--掌上平台
+		</p>
+	</div>
+</footer>
+<div style="position:fixed;right:0;bottom:30px;z-index:999">
+	<a href="#">
+		<img src="images/02.png" style="width:60px"></a>
+</div>
+</body>
+<!--优惠券模板-->
+<script type="text/template" id="couponTpl">
+	{{each result as value i}}
+	<li>
+		<a href="{{value.couponLink}}?couponid={{value.couponId}}&title={{value.couponTitle}}" date-couponId="{{value.couponId}}">
+			<img src="{{value.couponImg}}" alt="">
+			<br>{{value.couponTitle}}</a>
+	</li>
+	{{/each}}
+</script>
+
+<!--引用jq-->
+<script src="lib/jquery/jquery.min.js"></script>
+<!--引用bootstrop.js-->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!--引用template.js-->
+<script src="lib/template/template.js"></script>
+<!--引用自己的js-->
+<script src="./js/base.js"></script>
+<script src="js/coupon.js"></script>
+
+</html>

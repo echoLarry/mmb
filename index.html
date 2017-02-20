@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+	<title>慢慢买比价网-手机版</title>
+	<!--<link rel="shortcut icon" href="" />-->
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
+
+	<!--[if lt IE 9]>
+
+	<script src="lib/html5shiv/html5shiv.min.js"></script>
+	<script src="lib/respond/respond.js"></script>
+
+	<![endif]-->
+	<link rel="stylesheet/less" href="css/base.less"/>
+	<link rel="stylesheet/less" href="css/index.less"/>
+</head>
+
+<body>
+<!--头部区域-->
+<header class="header clearfix" id="header">
+	<a href="./index.html">
+		<img alt="" src="./images/header_logo.png">
+		</img>
+	</a>
+	<a href="#">
+		<img alt="" src="./images/header_app.png">
+		</img>
+	</a>
+</header>
+
+<!--搜索框-->
+<form action="#" id="search">
+	<div class="row">
+		<div class="col-xs-12">
+			<input type="text" class="form-control col-xs-9" placeholder="请输入你要比价的商品">
+		</div>
+		<div class="text-center">
+			<button type="submit" class="btn">搜索</button>
+		</div>
+	</div>
+</form>
+
+<!--首页菜单-->
+<section id="menu" class="container-fluid">
+	<div class="row text-center">
+	</div>
+</section>
+
+<!--超值折扣推荐-->
+<section id="discount">
+	<a href="./moneyctrl.html">
+		<div id="zktj">
+			<span class="clearfix">超值折扣推荐</span>
+			<img classs="clearfix " src="images/more.png" width="20" height="20" alt=""/>
+		</div>
+	</a>
+	<div class="zhekou">
+		<ul>
+		</ul>
+		<div class="nav text-center">
+			<a href="./moneyctrl.html">
+				更多优惠信息>>
+			</a>
+		</div>
+	</div>
+</section>
+
+<!--底部区域-->
+<footer id="footer">
+	<div class="clearfix">
+		<a href="#">登陆</a>
+		<a href="#">注册</a>
+		<a href="javascript:;" id="to_top">
+			<img alt="" src="./images/top.jpg">
+			返回顶部
+		</a>
+	</div>
+	<div>
+		<p>
+			<a href="#">手机APP下载</a>
+			<a href="#">慢慢买手机版</a>
+			-- 掌上比价平台
+		</p>
+		<p>m.manmanbuy.com</p>
+	</div>
+</footer>
+
+<!--fix-->
+<div class="fix">
+	<a href="javascript:;" id="closFix"></a>
+	<div class="icon"></div>
+	<p>慢慢买</p>
+	<p>全网比价，查历史价格</p>
+	<a href="#">立即打开</a>
+</div>
+</body>
+
+<!--首页菜单模板-->
+<script type="text/template" id="menuTpl">
+	{{each result as value i}}
+	<div class="col-xs-3 " style="{{}}">
+		<a href="{{value.titlehref}}">
+			{{#value.img}}
+			<p>{{value.name}}</p>
+		</a>
+	</div>
+	{{/each}}
+</script>
+<!--超值折扣推荐-->
+<script type="text/template" id="discountTpl">
+	{{each result as value i}}
+	<li>
+		<a href="javascript:;">
+			<div class="pic text-center">{{#value.productImgSm}}</div>
+			<div class="info">
+				<div class="title">{{value.productName+' '}}<span class='red'>{{' '+value.productPinkage}}</span></div>
+				<div class="bottom">
+					<span>{{value.productFrom}} |{{value.productTime}}</span>
+					<span>
+						<img src="./images/comments.png" alt=""/>
+						{{getNum(value.productComCount)}}
+					</span>
+				</div>
+			</div>
+		</a>
+	</li>
+	{{/each}}
+</script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/less/less.min.js"></script>
+<!--引用template.js-->
+<script src="./lib/template/template.js"></script>
+<script src="./js/base.js"></script>
+<script src="js/index.js"></script>
+</html>

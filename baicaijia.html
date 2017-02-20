@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<title>白菜价--淘宝内部优惠券</title>
+	<!-- 引入第三方文件-->
+	<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
+	<!--引入重置文件 -->
+	<link rel="stylesheet/less" href="./css/base.less"/>
+	<!-- 引入样式文件-->
+	<link rel="stylesheet/less" href="./css/baicai.less"/>
+	<!-- 引入less.js-->
+	<script src="./lib/less/less.min.js"></script>
+</head>
+
+<body>
+<header class="bcj-header">
+	<div class="back">
+		<a href="index.html" class="icon-back glyphicon glyphicon-menu-left"></a>
+	</div>
+	<h1>白菜价-淘宝内部劵</h1>
+	<div class="home">
+		<a href="http://m.manmanbuy.com/?o=download" class="icon-app"></a>
+	</div>
+</header>
+
+<section class="bcj-tab">
+	<div class="bcj-tab-v" style="">
+		<div class="bcj-tab-q clearfix" id="men">
+		</div>
+	</div>
+	<div class="bcj-tab-seabtn">
+		<!-- glyphicon glyphicon-remove删除按钮图标-->
+		<div class="bcj-tab-search glyphicon glyphicon-list" id="ope">
+		</div>
+	</div>
+	<div class="bcj-tab-searchbox" style=" display: none;" id="sea">
+		<div class="search">
+			<form method="">
+				<input type="search" name="key" value="" onfocus="delInput();" oninput="delInput();" class="border-img"
+				       placeholder="搜索商品即可查内部券">
+				<input type="submit" value="搜索">
+			</form>
+		</div>
+	</div>
+	<div class="" style="width:100%;padding-top:10px;padding-bottom: 10px;">
+		<img src="./images/quan_banner_wap.png" alt="" style="width: 100%;"/>
+	</div>
+	<div class="bcj-container">
+		<div class="bcj-con-list" id="list">
+		</div>
+	</div>
+</section>
+
+<footer id="footer" class="container-fluid">
+	<div class="row text-center">
+		<a href="#" class="col-xs-4 login">登录</a>
+		<a href="#" class="col-xs-4 enroll">注册</a>
+		<a href="javascript:;" class="col-xs-4 " id="to_top">返回顶部</a>
+	</div>
+	<div class="row">
+		<p class="text-center">
+			<a href="#">手机app下载</a>
+			<a href="#">不要买手机版</a>
+			--掌上平台
+		</p>
+	</div>
+</footer>
+
+<!--fix-->
+<div class="fix">
+	<a href="javascript:;" id="closFix"></a>
+	<div class="icon"></div>
+	<p>慢慢买</p>
+	<p>全网比价，查历史价格</p>
+	<a href="#">立即打开</a>
+</div>
+
+</body>
+<!--模板区域-->
+
+<script type="text/html" id="tmp">
+	<ul>
+		{{each result as value i}}
+		<li class="">
+			<a class="" data-titleid="{{value.titleId}}" href="javascript:;">{{value.title}}</a>
+		</li>
+		{{/each}}
+	</ul>
+</script>
+<script type="text/html" id="listTmp">
+	<ul>
+		{{each result as value i}}
+		<li>
+			<div class="left fl clearfix">
+				{{#value.productImg}}
+			</div>
+			<div class="right">
+				<div class="top">
+					<div class="f">
+						{{#value.productName}}
+					</div>
+					<div class="pr">
+						{{#value.productPrice}}
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="ttp">
+						<div class="q fl clearfix">
+							{{#value.productCoupon}}
+						</div>
+						<div class="g fr clearfix">
+							{{#value.productHref}}
+						</div>
+					</div>
+					{{#value.productCouponRemain}}
+				</div>
+			</div>
+		</li>
+		{{/each}}
+	</ul>
+</script>
+<!--引入jq-->
+<script src="./lib/jquery/jquery.min.js"></script>
+<!--引入bootstrap-->
+<script scr="./lib/bootstrap/js/bootstrap.min.js"></script>
+<!--引入template-->
+<script src="./lib/template/template.js"></script>
+<!--引入自己的js-->
+<script src="./js/base.js"></script>
+<script src="./js/baicai.js"></script>
+<!--返回上一页面-->
+<script>
+	$(function () {
+		closFix();
+		// 关闭fix
+		function closFix() {
+			$('#closFix').on('mousedown', function(){
+				$('.fix').fadeOut('slow');
+				$('#footer').animate({paddingBottom:0},400);
+			})
+		}
+	})
+</script>
+</html>

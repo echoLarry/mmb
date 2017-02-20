@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+
+	<!-- viewport适口 -->
+	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	      name="viewport"/>
+
+	<title>慢慢买-十大品牌-手机版</title>
+
+	<!-- 引入bootstrap -->
+	<link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- 引入重置less -->
+	<link href="./css/base.less" rel="stylesheet/less" type="text/css"/>
+
+	<!-- 引入brand.less -->
+	<link href="./css/brand.less" rel="stylesheet/less" type="text/css"/>
+</head>
+<body>
+<section class="box clearfix">
+	<!--头部区域-->
+	<header id="header">
+		<div class="logo">
+			<a href="./index.html">
+				<img src="./images/header_logo.png" alt=""/>
+			</a>
+		</div>
+		<div class="app">
+			<a href="">
+				<img src="./images/header_app.png" alt=""/>
+			</a>
+		</div>
+	</header>
+
+	<!--搜索框-->
+	<form action="#" id="search">
+		<div class="row">
+			<div class="col-xs-12">
+				<input type="text" class="form-control col-xs-9" placeholder="请输入你要比价的商品">
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn">搜索</button>
+			</div>
+		</div>
+	</form>
+
+	<!-- list -->
+	<form accept-charset="utf-8" action="" id="list" method="get">
+		<!-- 模板引擎区域 -->
+		<section class="nav">
+			<a href="./index.html">首页</a>
+			>
+			<a href="./brandTitle.html">品牌大全</a>
+			>
+			<a href="#" id="title"></a>
+		</section>
+		<section class="model">
+			<h3></h3>
+			<div>
+				<ul>
+				</ul>
+			</div>
+		</section>
+		<section class="model">
+			<h3></h3>
+			<div>
+				<ul>
+				</ul>
+			</div>
+		</section>
+		<section class="model">
+			<div class="hd">
+				<h3>
+					<a href="javascript:;" id="newComment"></a>
+				</h3>
+			</div>
+			<div class="bd">
+				<ul id="comment">
+				</ul>
+			</div>
+		</section>
+		<!-- /模板引擎区域 -->
+	</form>
+
+	<!--底部区域-->
+	<footer id="footer" class="container-fluid">
+		<div class="row text-center">
+			<a href="javascript:;" class="col-xs-4 login">登录</a>
+			<a href="javascript:;" class="col-xs-4 enroll">注册</a>
+			<a href="javascript:;" class="col-xs-4 " id="to_top">返回顶部</a>
+		</div>
+		<div class="row">
+			<p class="text-center">
+				<a href="#">手机app下载</a>
+				<a href="#">不要买手机版</a>
+				--掌上平台
+			</p>
+		</div>
+	</footer>
+
+	<!-- fixed -->
+	<div class="fix">
+		<a href="javascript:;" id="closFix"></a>
+
+		<div class="icon"></div>
+		<p>慢慢买</p>
+
+		<p>全网比价，查历史价格</p>
+		<a href="#">立即打开</a>
+	</div>
+</section>
+</body>
+<!-- 引入jquery -->
+<script src="./lib/jquery/jquery.min.js"></script>
+
+<!-- 引入bootstrap.js -->
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- 引入less.js -->
+<script src="./lib/less/less.min.js"></script>
+
+<!-- 引入template.js -->
+<script src="./lib/template/template.js"></script>
+
+<!-- 引入brand.js -->
+<script src="./js/base.js"></script>
+<script src="./js/brand.js"></script>
+
+<!-- 模板引擎 -->
+<!--模板1-->
+<script type="text/html" id="tpl1">
+	{{each result as value i}}
+	<li>
+		<a href="#">
+			<i>{{i+1}}</i>
+
+			<div>
+				<div>{{value.brandName}}</div>
+				<p>{{value.brandInfo}}</p>
+			</div>
+		</a>
+	</li>
+	{{/each}}
+</script>
+<!--模板2-->
+<script type="text/html" id="tpl2">
+	{{each result as value i}}
+	<li>
+		<a href="#">
+			<div id="productImg">
+				{{=value.productImg}}
+			</div>
+			<div>
+				<div id="productName">{{value.productName}}</div>
+				<div>
+					<span>{{value.productPrice}}</span>
+
+					<div>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+					</div>
+				</div>
+				<div>
+					<span>{{value.productQuote}}</span>
+					<span>{{value.productCom}}</span>
+				</div>
+			</div>
+		</a>
+	</li>
+	{{/each}}
+</script>
+<!--模板3-->
+<script type="text/html" id="tpl3">
+	{{each result as value i}}
+	<li>
+		<a href="javascript:">
+			<div class="protit clearfix">
+				<div class="pic">
+					<img src="" alt=""/>
+				</div>
+				<div class="tit"></div>
+			</div>
+		</a>
+		<div class="plbox">
+			<a href="javascript:;">
+				<div class="name">{{value.comName}}：
+                                <span class="star">
+                                    <em class="star5 glyphicon glyphicon-star"></em>
+                                    <em class="star5 glyphicon glyphicon-star"></em>
+                                    <em class="star5 glyphicon glyphicon-star"></em>
+                                    <em class="star5 glyphicon glyphicon-star"></em>
+                                    <em class="star5 glyphicon glyphicon-star"></em>
+                                </span>
+					<i>{{value.comTime}}</i>
+				</div>
+			</a>
+			<div class="con">{{value.comContent}}</div>
+		</div>
+	</li>
+	{{/each}}
+</script>
+</html>

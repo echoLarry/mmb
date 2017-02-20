@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title></title>
+    <!--<link rel="shortcut icon" href="" />-->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css" />
+
+    <!--[if lt IE 9]>
+
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.js"></script>
+
+    <![endif]-->
+    <link rel="stylesheet/less" href="css/base.less" />
+    <link rel="stylesheet/less" href="css/gsproduct.less" />
+
+</head>
+
+<body>
+    <div class="head">
+        <div class="back">
+            <a href="javascript:;" class="glyphicon glyphicon-menu-left"></a>
+        </div>
+        <h1>凑单品</h1>
+
+        <div class="home">
+            <a href="javascript:;" class="icon-app"></a>
+        </div>
+    </div>
+    <div id="coudan-box" class="clearfix">
+        <div class="list clearfix">
+            <div class="fliter clearfix">
+                <ul>
+                    <li><span>京东</span> <i class="glyphicon glyphicon-triangle-bottom"></i></li>
+                    <li><span>华北</span> <i class="glyphicon glyphicon-triangle-bottom"></i></li>
+                    <li><span>全部价格</span> <i class="glyphicon glyphicon-triangle-bottom"></i></li>
+                </ul>
+            </div>
+            <div class="menu_btn clearfix">
+                <i class="glyphicon glyphicon-menu-hamburger"></i>
+            </div>
+        </div>
+        <div class="hideBox clearfix">
+            <div class="popsort clearfix">
+                <ul class="clearfix">
+
+                </ul>
+            </div>
+            <div class="popprice clearfix">
+                <ul>
+
+                </ul>
+            </div>
+            <div class="popcat clearfix">
+                <ul>
+                    <li>全部价格<i></i></li>
+                    <li>1-3元<i></i></li>
+                    <li>3-5元<i></i></li>
+                    <li>5-10元<i></i></li>
+                    <li>10-15元<i></i></li>
+                    <li>15元以上<i></i></li>
+                </ul>
+            </div>
+            <div class="hamberMenu">
+                <div class="search">
+                    <div class="glyphicon glyphicon-search"></div>
+                    <input type="search" placeholder="搜索您想要的凑单品" />
+                    <input type="button" value="搜索" />
+                </div>
+                <div class="select clearfix">
+                    <p>排序</p>
+
+                    <div>
+                        <div><a href="#">销量</a></div>
+                        <div><a href="#" class="selected">价格<i class="glyphicon glyphicon-arrow-up"></i></a></div>
+                        <div><a href="#">价格<i class="glyphicon glyphicon-arrow-down"></i></a></div>
+                    </div>
+                </div>
+                <div class="select clearfix">
+                    <p>分类</p>
+
+                    <div class="clearfix">
+                        <div><a href="#" class="selected">全部</a></div>
+                        <div><a href="#">家居</a></div>
+                        <div><a href="#">数码</a></div>
+                        <div><a href="#">办公</a></div>
+                        <div><a href="#">个护</a></div>
+                        <div><a href="#">食品</a></div>
+                        <div><a href="#">母婴</a></div>
+                        <div><a href="#">服饰</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item clearfix">
+            <ul class="clearfix">
+
+            </ul>
+        </div>
+    </div>
+
+
+    <!--商店名模板-->
+    <script type="text/html" id="shopTpl">
+        {{each result as value i}}
+        <li><a href="#">{{value.shopName}}</a><i></i></li>
+        {{/each}}
+    </script>
+
+
+    <!--地域名模板-->
+    <script type="text/html" id="areaTpl">
+        {{each result as value i}}
+        <li>{{value.areaName}}<i></i></li>
+        {{/each}}
+    </script>
+
+
+    <!--商品信息模板-->
+    <script type="text/html" id="itemTpl">
+        {{each result as value i}}
+        <li>
+            <a href="#">
+                <div class="pic">
+                    <img src="{{value.productImg}}" alt="" />
+                    <p class="tit">{{value.productName}}</p>
+                </div>
+                <div class="other">
+                    <div class="price">{{value.productPrice}}</div>
+                    <input type="button" value="去凑单" />
+                </div>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/less/less.min.js"></script>
+    <script src="lib/template/template.js"></script>
+    <script src="js/gsproduct.js"></script>
+</body>
+
+</html>

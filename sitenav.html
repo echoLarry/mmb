@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+	<title>商品导航</title>
+	<!--<link rel="shortcut icon" href="" />-->
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
+
+	<!--[if lt IE 9]>
+
+	<script src="lib/html5shiv/html5shiv.min.js"></script>
+	<script src="lib/respond/respond.js"></script>
+
+	<![endif]-->
+	<link rel="stylesheet/less" href="css/base.less"/>
+	<link rel="stylesheet/less" href="css/sitenav.less"/>
+	<script src="./lib/less/less.min.js"></script>
+</head>
+
+<body>
+<!--头部区域-->
+<div class="head">
+	<div class="back">
+		<a href="#" class="glyphicon glyphicon-menu-left"></a>
+	</div>
+	<h1>商品导航</h1>
+
+	<div class="home">
+		<a href="#" class="icon-app"></a>
+	</div>
+</div>
+<!--导航区域-->
+<section class="container">
+	<div id="stores">
+
+	</div>
+	<div class="title row">
+
+	</div>
+</section>
+<!--标题栏-->
+<section class="nav">
+	<a href="./index.html">
+		首页
+	</a>
+	>
+	<a href="#">
+		商品导航
+	</a>
+</section>
+<!--底部区域-->
+<!--底部区域-->
+<footer id="footer" class="container-fluid">
+	<div class="row text-center">
+		<a href="#" class="col-xs-4 login">登录</a>
+		<a href="#" class="col-xs-4 enroll">注册</a>
+		<a href="#" class="col-xs-4 " id="to_top">返回顶部</a>
+	</div>
+	<div class="row">
+		<p class="text-center">
+			<a href="#">手机app下载</a>
+			<a href="#">不要买手机版</a>
+			--掌上平台
+		</p>
+	</div>
+</footer>
+
+<!--fix-->
+<div class="fix">
+	<a href="javascript:;" id="closFix"></a>
+	<div class="icon"></div>
+	<p>慢慢买</p>
+	<p>全网比价，查历史价格</p>
+	<a href="#">立即打开</a>
+</div>
+
+</body>
+<script type="text/template" id="storeTpl">
+	{{each result as value i}}
+	<a href="{{value.navHref}}" id="{{value.navId}}"><img src="{{value.navImg}}" alt=""/>{{value.navTitle}}</a>
+	{{/each}}
+</script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!--引用template.js-->
+<script src="./lib/template/template.js"></script>
+<!--<script src="js/index.js"></script>-->
+<script>
+	$(function () {
+		getsitenav();
+		goBack();
+		//请求商店数据
+		function getsitenav() {
+			$.ajax({
+				type: "get",
+				url: "http://139.199.157.195:9090/api/getsitenav",
+				success: function (result) {
+					var html = template("storeTpl", result);
+
+					$("#stores").html(html);
+
+				}
+			});
+		}
+
+		//============================
+		function goBack() {
+			$(".back").on("click", function () {
+				$(this).children().attr("href", document.referrer);
+			})
+		}
+
+		toTop();
+		closFix();
+
+		//返回顶部
+		function toTop() {
+			$("#to_top").on("click", function (e) {
+				e.preventDefault();
+				$('body,html').animate({scrollTop: 0}, 400);
+			})
+		}
+
+		// 关闭fix
+		function closFix() {
+			$('#closFix').on('mousedown', function(){
+				$('.fix').fadeOut('slow');
+				$('#footer').animate({paddingBottom:0},400);
+			})
+		}
+	})
+</script>
+
+</html>

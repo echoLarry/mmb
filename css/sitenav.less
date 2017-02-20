@@ -1,0 +1,84 @@
+//头部区域
+.head{
+  height: 44px;
+  background-color: #ff841d;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  >.back{
+    display: inline-block;
+    width: 50px;
+    height: 44px;
+    line-height: 50px;
+    text-align: center;
+    >.glyphicon{
+      color: #ffffff;
+      font-size: 17px;
+    }
+  }
+  >h1{
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    line-height: 44px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  >.home{
+    float: right;
+    width: 50px;
+    height: 44px;
+    text-align: center;
+    display: -webkit-box !important;
+    position: relative;
+    >.icon-app{
+      background-image: url("../images/header_app.png");
+      width: 100%;
+      margin: 0 auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: -webkit-box !important;
+      position: relative;
+      background-size: 32px;
+    }
+  }
+}
+//导航区域
+#stores {
+    padding: 20px;
+    >a{
+        display: inline-block;
+        padding: 10px;
+        border: 1px solid #bfbfbf;
+        background: #f4f4f4;
+        margin-bottom: 5px;
+        >img {
+            width: 16px;
+            height: 16px;
+           margin-right: 10px;
+        }
+    }
+    
+}
+//标题栏
+.nav{
+            border-top: solid 1px #ebebeb;
+            border-bottom: 1px solid #ccc;
+            background: -webkit-linear-gradient(#ffffff, #ebebeb);
+            background: -o-linear-gradient(#ffffff, #ebebeb);
+            background: linear-gradient(#ffffff, #ebebeb);
+            >a{
+                height: 38px;
+                color: #5a5a5a;
+                line-height: 38px;
+                font-family: "Microsoft YaHei";
+                display: inline-block;
+            }
+            >a:first-child{
+                margin-left: 10px;
+            }
+}

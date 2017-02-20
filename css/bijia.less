@@ -1,0 +1,261 @@
+
+
+
+
+
+
+
+
+
+
+//图片详情
+.nav{
+  height: 36px;
+  background-color: #ebebeb;
+  background: -webkit-gradient(linear,0 0,0 100%,from(#ffffff),to(#ebebeb));
+  background: -moz-linear-gradient(top, #ffffff, #ebebeb);
+  background: -o-linear-gradient(top,#ffffff, #ebebeb);
+  border-top: solid 1px #ebebeb;
+  border-bottom: 1px solid #ccc;
+  line-height: 36px;
+  padding-left: 8px;
+  font-size: 14px;
+}
+.banner{
+  padding: 10px 10px 0px 10px;
+  background-color: #ffffff;
+  >.pic{
+    height: 160px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0px;
+    position: relative;
+    >.sc{
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      img{
+        width: 39px;
+        height: 39px;
+      }
+    }
+  }
+  >.tit{
+    font-size: 16px;
+    text-align: left;
+    text-align-last: left;
+    word-break: break-all;
+  }
+  >.info{
+    color: #a1a1a1;
+    font-size: 13px;
+    margin-top: 10px;
+    li{
+      float: left;
+      width: 50%;
+      height: 24px;
+      line-height: 24px;
+      span{
+        display: inline-block;
+        width: 56px;
+        overflow: hidden;
+        float: left;
+        }
+      em{
+        float: left;
+        i{
+          color: #fe0000;
+          font-size: 14px;
+          font-style: normal;
+        }
+      }
+    }
+  }
+}
+//比价区域
+.tab_top{
+  height: 34px;
+  width: 100%;
+  display: block;
+  span{
+    display: block;
+    text-align: center;
+    line-height: 34px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #f90;
+    border: 1px solid #f30;
+    width: 33%;
+    float: left;
+  }
+}
+table{
+  width: 100%;
+  margin-top: 12px;
+  line-height: 28px;
+  border-bottom: 1px solid black;
+  tbody{
+
+    tr{
+      .red{
+        color: #d10311;
+
+      }
+    }
+  }
+}
+td:nth-child(1){
+    padding-left: 10px;
+  a{
+    img{
+      width: 16px;
+      height: 19px;
+      border: 1px solid #5a5a5a;
+    }
+  }
+}
+td:nth-child(2){
+  a{
+    font-size: 16px;
+    color: #5a5a5a;
+  }
+}
+td:nth-child(3){
+  color: #d10311;
+  text-align: right;
+  line-height: 22px;
+}
+td:nth-child(4){
+  float: right;
+  margin-right: 5px;
+  span{
+    display: block;
+    width: 60px;
+    height: 24px;
+    background-color: #f50;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 24px;
+    color: #fff;
+  }
+}
+//评论区域
+.model{
+  .hd {
+    background: #f3f3f3;
+    border: 1px solid #c8c8c8;
+    height: 38px;
+
+    h3 {
+      margin: 0;
+      height: 38px;
+      width: 100%;
+      line-height: 38px;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      a {
+
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        text-decoration:none;
+
+      }
+    }
+  }
+  .bd {
+    ul {
+      li {
+        border-bottom: 1px solid #e7e7e7;
+        padding: 10px;
+        >a {
+          display:block;
+          margin-bottom: 10px;
+          >.protit{
+            height: 80px;
+            >.pic {
+              margin-right: 10px;
+              img {
+
+              }
+            }
+            >.tit {
+              color: #999999;
+              line-height: 22px;
+              font-size: 14px;
+              word-break: break-all;
+            }
+          }
+        }
+        >.plbox {
+          //background: #f8f8f8;
+          padding: 10px;
+          //border: 1px solid #e7e7e7;
+          position: relative;
+          >.top {
+            display: block;
+            .name {
+              color: #4f6900;
+              font-size: 14px;
+
+              >i{
+                float: right;
+                color: #999999;
+                font-style:normal;
+              }
+            }
+           >div {
+             >.star {
+               margin-top: 4px;
+               display: inline-block;
+               height: 18px;
+               //vertical-align: middle;
+               >.star5 {
+                 //display: inline-block;//float: left;
+                 //width: 90px;
+                 //height: 18px;
+                 font-size: 14px;
+                 color:#ff7700;
+               }
+             }
+             >p{
+               margin-top: 4px;
+               float: right;
+               font-size: 12px;
+             }
+           }
+
+          }
+          >.con {
+            color: #000000;
+            margin-top: 10px;
+            line-height: 22px;
+            font-size: 14px;
+            word-break: break-all;
+            height: 100%;
+          }
+          >.but {
+            font-size:14px;
+            color:#999;
+            padding-top:5px;
+            display: inline-block;
+
+          }
+        }
+        >.plbox:after {
+          content: '';
+          width: 0;
+          height: 0;
+          position: absolute;
+          left: 30px;
+          top: -7px;
+          border-bottom: 8px solid #f8f8f8;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+
+        }
+      }
+    }
+  }
+}

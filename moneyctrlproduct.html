@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title>不要买--手机版</title>
+		<!--<link rel="shortcut icon" href="" />-->
+		<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css" />
+
+		<!--[if lt IE 9]>
+        	
+        <script src="lib/html5shiv/html5shiv.min.js"></script>
+        <script src="lib/respond/respond.js"></script>
+        	
+        <![endif]-->
+		<link rel="stylesheet/less" href="css/base.less" />
+		<link rel="stylesheet/less" href="css/moneyctrlproduct.less" />
+		<script src="./lib/less/less.min.js"></script>
+	</head>
+
+	<body>
+		<!-- 头部区域-->
+		<div class="head">
+			<div class="back">
+				<a href="javascript:;" class="glyphicon glyphicon-menu-left"></a>
+			</div>
+			<h1>海淘折扣</h1>
+
+			<div class="home">
+				<a href="javascript:;" class="icon-app"></a>
+			</div>
+		</div>
+		<!--主体页面-->
+		<section>
+			<main>
+				<div class="part">
+					<div class="part_top">
+						<h3>{{value.productName}}</h3>
+						<div class="part_info">
+							<span>10-25 11:22</span>
+							<span>二宝的小笼包 / 慢慢买</span>
+						</div>
+						<div class="part_content clearfix">
+							<div class="pic">
+								<img src="images/1.jpg" alt="" />
+							</div>
+							<div class="conn">
+								<p>京东目前售价299元，可参加满199元减100元的优惠，最终199元包邮到手，需要的可以考虑入手。</p>
+
+								<p>
+									首度这款型号LC0402的蝴蝶吸顶灯采用5730芯片，高亮度，节能省电，高显色性，长寿命，一键式控制，适用面积10-15㎡，规格：55*55*11cm，外壳为铝材灯罩，灯罩为亚克力，长久耐用，脏了关闭电源用清水洗净即可。</p>
+
+								<p>
+									<img src="images/1.jpg" alt="" />
+								</p>
+							</div>
+							<div class="golink">
+								<a href="javascript:;">前往购买</a>
+							</div>
+						</div>
+						<div style="text-align: center; margin: 20px 10px;">
+							<img src="images/mmbweixin2.png" style="width: 100%; height: auto" />
+						</div>
+						<div class="comment">
+							<div class="comment_top">发表评论</div>
+							<div class="comment_form clearfix">
+								<form action="javascript:;">
+									<input type="text" class="text" />
+									<input type="button" value="发表评论" class="btn" />
+								</form>
+								<div class="">
+									<div>
+										<a href="javascript:;">
+											<img src="" alt="" />
+										</a>
+									</div>
+									<div>
+										<div>
+											<a href="javascript:;"></a>
+											<span></span>
+										</div>
+										<div></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</section>
+		<footer id="footer" class="container-fluid">
+			<div class="row text-center">
+				<a href="#" class="col-xs-4 login">登录</a>
+				<a href="#" class="col-xs-4 enroll">注册</a>
+				<a href="#" class="col-xs-4 " id="to_top">返回顶部</a>
+			</div>
+			<div class="row">
+				<p class="text-center">
+					<a href="#">手机app下载</a>
+					<a href="#">不要买手机版</a>
+					--掌上平台
+				</p>
+			</div>
+		</footer>
+	</body>
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<!--引用template.js-->
+	<script src="./lib/template/template.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			toTop();
+			goBack();
+			//返回顶部
+			function toTop() {
+				$("#to_top").on("click", function(e) {
+					e.preventDefault();
+					$('body,html').animate({ scrollTop: 0 }, 400);
+				})
+			}
+
+			function goBack() {
+				$(".back").on("click", function() {
+					$(this).children().attr("href", document.referrer);
+				})
+			}
+		})
+	</script>
+
+</html>

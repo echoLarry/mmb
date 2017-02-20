@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>不要买--手机版</title>
+    <!--<link rel="shortcut icon" href="" />-->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
+
+    <!--[if lt IE 9]>
+
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.js"></script>
+
+    <![endif]-->
+    <link rel="stylesheet/less" href="css/base.less"/>
+    <link rel="stylesheet/less" href="css/prolist.less"/>
+    <script src="./lib/less/less.min.js"></script>
+</head>
+
+<body>
+<!--头部区域-->
+<header id="header">
+
+    <div class="logo">
+        <a href="./index.html">
+            <img src="./images/header_logo.png" alt=""/>
+        </a>
+    </div>
+
+    <div class="app">
+        <a href="">
+            <img src="./images/header_app.png" alt=""/>
+        </a>
+    </div>
+
+</header>
+<!--搜索框-->
+<form action="#" id="search">
+    <div class="row">
+        <div class="col-xs-9">
+            <input type="text" class="form-control col-xs-9" placeholder="请输入你要比价的商品">
+        </div>
+        <div class="col-xs-3 text-center">
+            <button type="submit" class="btn">搜索</button>
+        </div>
+    </div>
+</form>
+<section class="model">
+    <div class="zh">
+        <ul>
+            <li><a href="#" class="zhh">综合</a></li>
+            <li><a href="#">销量</a></li>
+            <li><a href="#">价格</a></li>
+            <li><a href="#">筛选</a></li>
+        </ul>
+    </div>
+    <div id="dianxin">
+        <ul>
+           
+        </ul>
+    </div>
+    </div>
+    <div class="page">
+        <table width="100%">
+            <tbody>
+            <tr>
+                <td>
+                    <a href="#">上一页</a>
+                </td>
+                <td>
+                    <select class="xx">
+                        <option selected="selected" value="1">1/12</option>
+                        <option value="2">2/12</option>
+                        <option value="3">3/12</option>
+                        <option value="4">4/12</option>
+                        <option value="5">5/12</option>
+                        <option value="6">6/12</option>
+                    </select>
+                </td>
+                <td>
+                    <a href="#">下一页</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<!--底部区域-->
+<footer id="footer" class="container-fluid">
+    <div class="row text-center">
+        <a href="#" class="col-xs-4 login">登录</a>
+        <a href="#" class="col-xs-4 enroll">注册</a>
+        <a href="#" class="col-xs-4 " id="to_top">返回顶部</a>
+    </div>
+    <div class="row">
+        <p class="text-center">
+            <a href="#">手机app下载</a>
+            <a href="#">不要买手机版</a>
+            --掌上平台
+        </p>
+    </div>
+</footer>
+</body>
+<script id="dx" type="text/html">
+    <section class="model">
+        <div>
+            <ul>
+                {{each result as value i}}
+                <li>
+                    <a href="./bijia.html?productid={{value.productId}}">
+                        <div>
+                            {{#value.productImg}}
+                        </div>
+                        <div>
+                            <div>{{#value.productName}}</div>
+                            <div>
+                                <span>{{#value.productPrice}}</span>
+                            </div>
+                            <div>
+                                <span>{{#value.productQuote}}</span>
+                                <span>{{#value.productCom}}</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+</script>
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!--引用template.js-->
+<script src="./lib/template/template.js"></script>
+<script src="./js/base.js"></script>
+<!--引用自己的js-->
+<script src="js/Prolist.js"></script>
+</html>
