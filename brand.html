@@ -2,36 +2,30 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-
 	<!-- viewport适口 -->
 	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
 	      name="viewport"/>
-
 	<title>慢慢买-十大品牌-手机版</title>
-
 	<!-- 引入bootstrap -->
 	<link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
 	<!-- 引入重置less -->
-	<link href="./css/base.less" rel="stylesheet/less" type="text/css"/>
-
+	<link href="./css/base.min.css" rel="stylesheet" type="text/css"/>
 	<!-- 引入brand.less -->
-	<link href="./css/brand.less" rel="stylesheet/less" type="text/css"/>
+	<link href="./css/brand.min.css" rel="stylesheet" type="text/css"/>
 </head>
+
 <body>
 <section class="box clearfix">
 	<!--头部区域-->
-	<header id="header">
-		<div class="logo">
-			<a href="./index.html">
-				<img src="./images/header_logo.png" alt=""/>
-			</a>
-		</div>
-		<div class="app">
-			<a href="">
-				<img src="./images/header_app.png" alt=""/>
-			</a>
-		</div>
+	<header class="header clearfix" id="header">
+		<a href="./index.html">
+			<img alt="" src="./images/header_logo.png">
+			</img>
+		</a>
+		<a href="#">
+			<img alt="" src="./images/header_app.png">
+			</img>
+		</a>
 	</header>
 
 	<!--搜索框-->
@@ -59,15 +53,13 @@
 		<section class="model">
 			<h3></h3>
 			<div>
-				<ul>
-				</ul>
+				<ul></ul>
 			</div>
 		</section>
 		<section class="model">
 			<h3></h3>
 			<div>
-				<ul>
-				</ul>
+				<ul></ul>
 			</div>
 		</section>
 		<section class="model">
@@ -77,36 +69,37 @@
 				</h3>
 			</div>
 			<div class="bd">
-				<ul id="comment">
-				</ul>
+				<ul id="comment"></ul>
 			</div>
 		</section>
 		<!-- /模板引擎区域 -->
 	</form>
 
 	<!--底部区域-->
-	<footer id="footer" class="container-fluid">
-		<div class="row text-center">
-			<a href="javascript:;" class="col-xs-4 login">登录</a>
-			<a href="javascript:;" class="col-xs-4 enroll">注册</a>
-			<a href="javascript:;" class="col-xs-4 " id="to_top">返回顶部</a>
+	<footer id="footer">
+		<div class="clearfix">
+			<a href="#">登陆</a>
+			<a href="#">注册</a>
+			<a href="javascript:;" id="to_top">
+				<img alt="" src="./images/top.jpg">
+				返回顶部
+			</a>
 		</div>
-		<div class="row">
-			<p class="text-center">
-				<a href="#">手机app下载</a>
-				<a href="#">不要买手机版</a>
-				--掌上平台
+		<div>
+			<p>
+				<a href="#">手机APP下载</a>
+				<a href="#">慢慢买手机版</a>
+				-- 掌上比价平台
 			</p>
+			<p>m.manmanbuy.com</p>
 		</div>
 	</footer>
 
 	<!-- fixed -->
 	<div class="fix">
 		<a href="javascript:;" id="closFix"></a>
-
 		<div class="icon"></div>
 		<p>慢慢买</p>
-
 		<p>全网比价，查历史价格</p>
 		<a href="#">立即打开</a>
 	</div>
@@ -114,19 +107,13 @@
 </body>
 <!-- 引入jquery -->
 <script src="./lib/jquery/jquery.min.js"></script>
-
 <!-- 引入bootstrap.js -->
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- 引入less.js -->
-<script src="./lib/less/less.min.js"></script>
-
 <!-- 引入template.js -->
 <script src="./lib/template/template.js"></script>
-
 <!-- 引入brand.js -->
-<script src="./js/base.js"></script>
-<script src="./js/brand.js"></script>
+<script src="./js/base.min.js"></script>
+<script src="./js/brand.min.js"></script>
 
 <!-- 模板引擎 -->
 <!--模板1-->
@@ -156,7 +143,6 @@
 				<div id="productName">{{value.productName}}</div>
 				<div>
 					<span>{{value.productPrice}}</span>
-
 					<div>
 						<span class="glyphicon glyphicon-star"></span>
 						<span class="glyphicon glyphicon-star"></span>

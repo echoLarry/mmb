@@ -8,11 +8,9 @@
 	<!-- 引入第三方文件-->
 	<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
 	<!--引入重置文件 -->
-	<link rel="stylesheet/less" href="./css/base.less"/>
+	<link rel="stylesheet" href="./css/base.min.css"/>
 	<!-- 引入样式文件-->
-	<link rel="stylesheet/less" href="./css/baicai.less"/>
-	<!-- 引入less.js-->
-	<script src="./lib/less/less.min.js"></script>
+	<link rel="stylesheet" href="./css/baicai.min.css"/>
 </head>
 
 <body>
@@ -21,6 +19,7 @@
 		<a href="index.html" class="icon-back glyphicon glyphicon-menu-left"></a>
 	</div>
 	<h1>白菜价-淘宝内部劵</h1>
+
 	<div class="home">
 		<a href="http://m.manmanbuy.com/?o=download" class="icon-app"></a>
 	</div>
@@ -54,33 +53,39 @@
 	</div>
 </section>
 
-<footer id="footer" class="container-fluid">
-	<div class="row text-center">
-		<a href="#" class="col-xs-4 login">登录</a>
-		<a href="#" class="col-xs-4 enroll">注册</a>
-		<a href="javascript:;" class="col-xs-4 " id="to_top">返回顶部</a>
+<footer id="footer">
+	<div class="clearfix">
+		<a href="#">登陆</a>
+		<a href="#">注册</a>
+		<a href="javascript:;" id="to_top">
+			<img alt="" src="./images/top.jpg">
+			返回顶部
+		</a>
 	</div>
-	<div class="row">
-		<p class="text-center">
-			<a href="#">手机app下载</a>
-			<a href="#">不要买手机版</a>
-			--掌上平台
+	<div>
+		<p>
+			<a href="#">手机APP下载</a>
+			<a href="#">慢慢买手机版</a>
+			-- 掌上比价平台
 		</p>
+
+		<p>m.manmanbuy.com</p>
 	</div>
 </footer>
 
 <!--fix-->
 <div class="fix">
 	<a href="javascript:;" id="closFix"></a>
+
 	<div class="icon"></div>
 	<p>慢慢买</p>
+
 	<p>全网比价，查历史价格</p>
 	<a href="#">立即打开</a>
 </div>
-
 </body>
-<!--模板区域-->
 
+<!--模板区域-->
 <script type="text/html" id="tmp">
 	<ul>
 		{{each result as value i}}
@@ -129,17 +134,17 @@
 <!--引入template-->
 <script src="./lib/template/template.js"></script>
 <!--引入自己的js-->
-<script src="./js/base.js"></script>
-<script src="./js/baicai.js"></script>
+<script src="./js/base.min.js"></script>
+<script src="./js/baicai.min.js"></script>
 <!--返回上一页面-->
 <script>
 	$(function () {
 		closFix();
 		// 关闭fix
 		function closFix() {
-			$('#closFix').on('mousedown', function(){
+			$('#closFix').on('mousedown', function () {
 				$('.fix').fadeOut('slow');
-				$('#footer').animate({paddingBottom:0},400);
+				$('#footer').animate({paddingBottom: 0}, 400);
 			})
 		}
 	})

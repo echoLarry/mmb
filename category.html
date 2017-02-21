@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
-	<title>比价搜索</title>
+	<title>产品分类-慢慢买比价网</title>
 	<!--<link rel="shortcut icon" href="" />-->
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
 
@@ -14,21 +14,18 @@
 	<script src="lib/respond/respond.js"></script>
 
 	<![endif]-->
-	<link rel="stylesheet/less" href="css/base.less"/>
-	<link rel="stylesheet/less" href="css/category.less"/>
-	<script src="./lib/less/less.min.js"></script>
+	<link rel="stylesheet" href="css/base.min.css"/>
+	<link rel="stylesheet" href="css/category.min.css"/>
 </head>
 <body>
-</body>
+
 <!--头部区域-->
 <header class="header clearfix" id="header">
 	<a href="./index.html">
-		<img alt="" src="./images/header_logo.png">
-		</img>
+		<img alt="" src="./images/header_logo.png"/>
 	</a>
 	<a href="#">
-		<img alt="" src="./images/header_app.png">
-		</img>
+		<img alt="" src="./images/header_app.png"/>
 	</a>
 </header>
 
@@ -36,7 +33,7 @@
 <form action="#" id="search">
 	<div class="row">
 		<div class="col-xs-12">
-			<input type="text" class="form-control col-xs-9" placeholder="请输入你要比价的商品">
+			<input type="text" class="form-control col-xs-9" placeholder="请输入你要比价的商品"/>
 		</div>
 		<div class="text-center">
 			<button type="submit" class="btn">搜索</button>
@@ -47,16 +44,11 @@
 
 <!--比价区域-->
 <section id="price">
-
 	<div class="row">
 		<div class="items">
-			<div class="item">
-
-
-			</div>
+			<div class="item"></div>
 		</div>
 	</div>
-
 </section>
 
 <!--底部区域-->
@@ -65,7 +57,7 @@
 		<a href="#">登陆</a>
 		<a href="#">注册</a>
 		<a href="javascript:;" id="to_top">
-			<img alt="" src="./images/top.jpg">
+			<img alt="" src="./images/top.jpg"/>
 			返回顶部
 		</a>
 	</div>
@@ -75,6 +67,7 @@
 			<a href="#">慢慢买手机版</a>
 			-- 掌上比价平台
 		</p>
+
 		<p>m.manmanbuy.com</p>
 	</div>
 </footer>
@@ -90,7 +83,7 @@
 	<a href="#">立即打开</a>
 </div>
 
-
+</body>
 <!--比价区域-->
 <script type="text/template" id="priceTpl">
 	{{each result as value i}}
@@ -98,27 +91,24 @@
 		<a href="javascript:;" date-titleId="{{value.titleId}}">{{value.title}}</a>
 	</div>
 	<div class="list text-center clearfix" style="display: none;">
-
 	</div>
 	{{/each}}
 </script>
 
-
 <!--比价区域在加载-->
 <script type="text/template" id="mTitleTpl">
 	{{each result as value i}}
-	<div class="col-xs-4"><a href="./Prolist.html?categoryId={{value.categoryId}}"
-	                         data-categoryid="{{value.categoryId}}">{{value.category}}</a></div>
+	<div class="col-xs-4">
+		<a href="./Prolist.html?categoryId={{value.categoryId}}" data-categoryid="{{value.categoryId}}">{{value.category}}</a>
+	</div>
 	{{/each}}
 </script>
-
 
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <!--引用template.js-->
 <script src="./lib/template/template.js"></script>
-<script src="./js/base.js"></script>
-<script src="js/category.js"></script>
-</script>
-</
-html >
+<script src="./js/base.min.js"></script>
+<script src="js/category.min.js"></script>
+
+</html>
